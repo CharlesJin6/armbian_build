@@ -13,9 +13,9 @@ inputs:
     default: ""
 
   armbian_artifacts:
-    descriptions: "Upload PATH"
+    description: "Upload PATH"
     required: false
-    default: "build/output/images/"
+    default: "${{ github.action_path }}/output/images/"
 
   armbian_target:
     description: "Build image or kernel"
@@ -191,7 +191,7 @@ runs:
       run: |
         echo ${{ inputs.armbian_pgp_password }} | \
         gpg --passphrase-fd 0 --armor --detach-sign --pinentry-mode loopback --batch --yes \
-        build/output/images/*.img*.xz
+        ${{ github.action_path }}/output/images/*.img*.xz
 
     - uses: ncipollo/release-action@v1
       with:
