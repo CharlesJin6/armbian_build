@@ -270,7 +270,7 @@ function adaptative_prepare_host_dependencies() {
 		qemu-user-static
 		rsync
 		swig # swig is needed for some u-boot's. example: "bananapi.conf"
-		u-boot-tools
+		u-boot-tools xxd
 		udev # causes initramfs rebuild, but is usually pre-installed.
 		uuid-dev
 		zlib1g-dev
