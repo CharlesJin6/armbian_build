@@ -170,9 +170,13 @@ function artifact_uboot_build_from_sources() {
 	# Hack, if ARTIFACT_BUILD_INTERACTIVE=yes, don't run under logging manager. Emit a warning about it.
 	if [[ "${ARTIFACT_BUILD_INTERACTIVE:-"no"}" == "yes" ]]; then
 		display_alert "Running uboot build in interactive mode" "log file will be incomplete" "info"
+		apt remove -y libfdt-dev
 		compile_uboot
+		apt install -y libfdt-dev
 	else
+		apt remove -y libfdt-dev
 		LOG_SECTION="compile_uboot" do_with_logging compile_uboot
+		apt install -y libfdt-dev
 	fi
 }
 
