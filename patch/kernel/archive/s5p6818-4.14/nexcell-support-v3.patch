@@ -80218,7 +80218,7 @@ diff -ENwbur a/drivers/input/touchscreen/it7260_mts.c b/drivers/input/touchscree
 +		unsigned char buf_index, unsigned char const *buf_data,
 +		unsigned short len_data)
 +{
-+	unsigned char buf[2];
++	unsigned char buf[8];
 +	int ret;
 +
 +	struct i2c_msg msgs[1] = {
@@ -258721,9 +258721,9 @@ diff -ENwbur a/include/linux/mfd/axp228-cfg.h b/include/linux/mfd/axp228-cfg.h
 +
 +#define USBVOLLIMEN 1
 +
-+#define USBVOLLIM 4700 /* AXP22:4000~4700£¬100/step */
++#define USBVOLLIM 4700 /* AXP22:4000~4700ï¿½ï¿½100/step */
 +
-+#define USBVOLLIMPC 4700 /* AXP22:4000~4700£¬100/step */
++#define USBVOLLIMPC 4700 /* AXP22:4000~4700ï¿½ï¿½100/step */
 +
 +#define USBCURLIMEN 0
 +
