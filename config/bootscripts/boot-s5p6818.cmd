@@ -10,7 +10,7 @@ setenv verbosity "1"
 setenv bootlogo "false"
 setenv fdt_addr "0x48000000"
 setenv ramdisk_addr_r "0x49000000"
-setenv kernel_addr_r "0x4a000000"
+setenv kernel_addr_r "0x4b000000"
 
 # fdtfile should come from compile-time u-boot patches
 if test -z "${fdtfile}"; then
